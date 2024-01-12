@@ -4,7 +4,7 @@
       <n-text>{{ client.mac }}</n-text>
     </n-descriptions-item>
     <n-descriptions-item label="Vendor">
-      <n-text>{{ vendor }}</n-text>
+      <n-text>{{ vendor ?? "Unknown" }}</n-text>
     </n-descriptions-item>
     <n-descriptions-item label="IPV4">
       <n-text>{{ client.ip }}</n-text>
@@ -37,7 +37,7 @@
 import type { Client } from '@/utils/ac'
 import { NDescriptions, NDescriptionsItem, NText, NTime, NBadge, NSpace } from 'naive-ui'
 import { computed } from 'vue'
-import toVendor from '@/composables/toVendor'
+import toVendor from '@/composables/to-vendor'
 
 const props = defineProps<{
   client: Client

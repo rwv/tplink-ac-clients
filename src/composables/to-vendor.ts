@@ -19,7 +19,7 @@ export default function toVendor(client_: Client | Ref<Client>) {
     })
 
     if (vendors.length === 0) {
-      return 'Unknown'
+      return undefined
     } else {
       return vendors[0]['Organization Name']
     }
