@@ -1,21 +1,31 @@
 <template>
   <n-flex justify="space-between" align="center">
-    <n-button quaternary circle @click="whereStore.refreshClients">
+    <n-button quaternary circle @click="whereStore.refreshClients" class="refresh-icon">
       <template #icon>
-        <n-icon><ArrowClockwise16Regular /></n-icon>
+        <n-icon><IndicatorSVG :percentage="whereStore.timeToNextUpdatePercent" /></n-icon>
       </template>
     </n-button>
 
-    <span> <n-time :time="whereStore.lastUpdated" :to="now" type="relative" />更新 </span>
+    <span>
+      <span v-if="time - whereStore.lastUpdated > 30 * 1000">
+        <n-time :time="whereStore.lastUpdated" :to="time" type="relative" />更新
+      </span>
+    </span>
   </n-flex>
 </template>
 
 <script setup lang="ts">
 import { NTime, NFlex, NButton, NIcon } from 'naive-ui'
 import { useWhereStore } from '@/stores/where'
-import { useNow } from '@vueuse/core'
-import { ArrowClockwise16Regular } from '@vicons/fluent'
+import { useTimestamp } from '@vueuse/core'
+import IndicatorSVG from './IndicatorSVG.vue'
 
 const whereStore = useWhereStore()
-const now = useNow()
+const time = useTimestamp()
 </script>
+
+<style scoped>
+.refresh-icon {
+  margin-right: 0.5rem;
+}
+</style>
