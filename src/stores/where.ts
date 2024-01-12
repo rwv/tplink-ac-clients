@@ -1,13 +1,15 @@
 import { defineStore } from 'pinia'
 import { useStorage } from '@vueuse/core'
 import type { Ref } from 'vue'
-import { getToken } from '@/utils/ac'
+import { getToken, getClients, type Client } from '@/utils/ac'
 
 export const useWhereStore = defineStore('where', () => {
   const endpoint = useStorage('endpoint', '') as Ref<string>
   const username = useStorage('username', '') as Ref<string>
   const password = useStorage('password', '') as Ref<string>
   const token = useStorage('token', '') as Ref<string>
+  const clients = useStorage('clients', []) as Ref<Client[]>
+  const lastUpdate = useStorage('lastUpdate', 0) as Ref<number>
 
   async function login() {
     if (!endpoint.value) {
@@ -25,5 +27,16 @@ export const useWhereStore = defineStore('where', () => {
     token.value = token_
   }
 
-  return { endpoint, username, password, token, login }
+  async function refreshClients() {
+    if (!token.value) {
+      await login()
+    }
+
+    const clients_ = await getClients(endpoint.value, token.value)
+    console.log(`Refresh clients success, clients count: ${JSON.stringify(clients_.length)}`)
+    clients.value = clients_
+    lastUpdate.value = Date.now()
+  }
+
+  return { endpoint, username, password, token, login, refreshClients }
 })

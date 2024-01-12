@@ -6,7 +6,8 @@ import SettingsCollapse from '@/components/settings/SettingsCollapse.vue'
 const whereStore = useWhereStore()
 
 onMounted(async () => {
-  whereStore.login()
+  const clients = await whereStore.refreshClients()
+  console.log(clients)
 })
 </script>
 
