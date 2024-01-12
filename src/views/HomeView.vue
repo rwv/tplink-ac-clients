@@ -9,6 +9,7 @@ import { NDivider } from 'naive-ui'
 const whereStore = useWhereStore()
 
 onMounted(async () => {
+  await whereStore.login()
   await whereStore.refreshClients()
 })
 </script>
