@@ -15,3 +15,10 @@ onMounted(async () => {
     <SettingsCollapse />
   </main>
 </template>
+
+
+<style scoped>
+main {
+  padding: 1rem;
+}
+</style>
