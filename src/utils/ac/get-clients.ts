@@ -33,7 +33,14 @@ export async function getClients(endpoint: string, token: string) {
   })
 
   const client_list = (await client_response.json())['apmng_client']['client_list']
-  const clients = client_list.map((client: any) => Object.values(client)[0])
+  const clients = client_list.map((client: any) => Object.values(client)[0]).map((client: Client) => {
+    // decode all fields using decodeURIComponent
+    for (const key in client) {
+      // @ts-ignore
+      client[key] = decodeURIComponent(client[key])
+    }
+    return client
+  })
 
   return clients
 }
