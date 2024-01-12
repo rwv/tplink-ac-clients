@@ -38,5 +38,5 @@ export const useWhereStore = defineStore('where', () => {
     lastUpdate.value = Date.now()
   }
 
-  return { endpoint, username, password, token, login, refreshClients }
+  return { endpoint, username, password, token, login, refreshClients, clients, lastUpdate }
 })
