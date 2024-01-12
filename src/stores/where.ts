@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { useStorage } from '@vueuse/core'
 import type { Ref } from 'vue'
 import { getToken, getClients, type Client } from '@/utils/ac'
+import { useIntervalFn } from '@vueuse/core'
 
 export const useWhereStore = defineStore('where', () => {
   const endpoint = useStorage('endpoint', '') as Ref<string>
@@ -10,6 +11,7 @@ export const useWhereStore = defineStore('where', () => {
   const token = useStorage('token', '') as Ref<string>
   const clients = useStorage('clients', []) as Ref<Client[]>
   const lastUpdated = useStorage('lastUpdate', 0) as Ref<number>
+  const updateInterval = useStorage('updateInterval', 5000) as Ref<number>
 
   async function login() {
     if (!endpoint.value) {
@@ -38,6 +40,8 @@ export const useWhereStore = defineStore('where', () => {
     lastUpdated.value = Date.now()
     console.log(`Refresh clients Last Update: ${lastUpdated.value}`)
   }
+
+  useIntervalFn(refreshClients, updateInterval.value)
 
   return { endpoint, username, password, token, login, refreshClients, clients, lastUpdated }
 })
