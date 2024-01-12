@@ -9,7 +9,7 @@ export const useWhereStore = defineStore('where', () => {
   const password = useStorage('password', '') as Ref<string>
   const token = useStorage('token', '') as Ref<string>
   const clients = useStorage('clients', []) as Ref<Client[]>
-  const lastUpdate = useStorage('lastUpdate', 0) as Ref<number>
+  const lastUpdated = useStorage('lastUpdate', 0) as Ref<number>
 
   async function login() {
     if (!endpoint.value) {
@@ -35,8 +35,9 @@ export const useWhereStore = defineStore('where', () => {
     const clients_ = await getClients(endpoint.value, token.value)
     console.log(`Refresh clients success, clients count: ${JSON.stringify(clients_.length)}`)
     clients.value = clients_
-    lastUpdate.value = Date.now()
+    lastUpdated.value = Date.now()
+    console.log(`Refresh clients Last Update: ${lastUpdated.value}`)
   }
 
-  return { endpoint, username, password, token, login, refreshClients, clients, lastUpdate }
+  return { endpoint, username, password, token, login, refreshClients, clients, lastUpdated }
 })

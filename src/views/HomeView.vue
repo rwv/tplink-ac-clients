@@ -3,6 +3,7 @@ import { onMounted } from 'vue'
 import { useWhereStore } from '@/stores/where'
 import SettingsCollapse from '@/components/settings/SettingsCollapse.vue'
 import APClients from '@/components/clients/APClients.vue'
+import ClientHeader from '@/components/clients/ClientsHeader.vue'
 
 const whereStore = useWhereStore()
 
@@ -13,6 +14,7 @@ onMounted(async () => {
 
 <template>
   <main>
+    <ClientHeader />
     <APClients />
     <SettingsCollapse />
   </main>
