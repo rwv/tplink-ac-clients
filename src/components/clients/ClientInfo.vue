@@ -3,6 +3,9 @@
     <n-descriptions-item label="MAC 地址">
       <n-text>{{ client.mac }}</n-text>
     </n-descriptions-item>
+    <n-descriptions-item label="Vendor">
+      <n-text>{{ vendor }}</n-text>
+    </n-descriptions-item>
     <n-descriptions-item label="IPV4">
       <n-text>{{ client.ip }}</n-text>
     </n-descriptions-item>
@@ -34,6 +37,7 @@
 import type { Client } from '@/utils/ac'
 import { NDescriptions, NDescriptionsItem, NText, NTime, NBadge, NSpace } from 'naive-ui'
 import { computed } from 'vue'
+import toVendor from '@/composables/toVendor'
 
 const props = defineProps<{
   client: Client
@@ -45,4 +49,6 @@ const connectTimestamp = computed(() => {
   const connectTimestamp = Date.parse(dateDecode + ' ' + timeDecode)
   return connectTimestamp
 })
+
+const { vendor } = toVendor(props.client)
 </script>
