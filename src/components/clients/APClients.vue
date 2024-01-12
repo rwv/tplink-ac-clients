@@ -3,7 +3,7 @@
     <n-collapse-item
       :title="client.name ?? client.mac"
       :name="client.mac"
-      v-for="client in whereStore.clients"
+      v-for="client in whereStore.clientsFiltered"
       :key="client.mac"
     >
       <template #header-extra>

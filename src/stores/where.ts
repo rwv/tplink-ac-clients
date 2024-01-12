@@ -22,6 +22,13 @@ export const useWhereStore = defineStore('where', () => {
   const timeToNextUpdatePercent = computed(() => {
     return Math.round((100 * timeToNextUpdate.value) / updateInterval.value)
   })
+  const showHidden = useStorage('showHidden', false) as Ref<boolean>
+
+  const clientsFiltered = computed(() => {
+    return clients.value.filter((client) => {
+      return showHidden.value || !client?.name?.startsWith('.')
+    })
+  })
 
   const message = useMessage()
 
@@ -81,6 +88,8 @@ export const useWhereStore = defineStore('where', () => {
     lastInterval,
     updateInterval,
     timeToNextUpdate,
-    timeToNextUpdatePercent
+    timeToNextUpdatePercent,
+    showHidden,
+    clientsFiltered
   }
 })
