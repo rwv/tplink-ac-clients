@@ -4,6 +4,7 @@ import type { Ref } from 'vue'
 import { getToken, getClients, type Client } from '@/utils/ac'
 import { useIntervalFn } from '@vueuse/core'
 import { ref, computed } from 'vue'
+import { useMessage } from 'naive-ui'
 
 export const useWhereStore = defineStore('where', () => {
   const endpoint = useStorage('endpoint', '') as Ref<string>
@@ -16,38 +17,49 @@ export const useWhereStore = defineStore('where', () => {
   const lastInterval = ref(Date.now())
   const now = useTimestamp()
   const timeToNextUpdate = computed(() => {
-    return Math.max(0, updateInterval.value - (now.value- lastInterval.value))
+    return Math.max(0, updateInterval.value - (now.value - lastInterval.value))
   })
   const timeToNextUpdatePercent = computed(() => {
     return Math.round((100 * timeToNextUpdate.value) / updateInterval.value)
   })
 
-  async function login() {
-    if (!endpoint.value) {
-      throw new Error('endpoint is empty')
-    }
-    if (!username.value) {
-      throw new Error('username is empty')
-    }
-    if (!password.value) {
-      throw new Error('password is empty')
-    }
+  const message = useMessage()
 
-    const token_ = await getToken(endpoint.value, username.value, password.value)
-    console.log(`Login success, token: ${token_}`)
-    token.value = token_
+  async function login() {
+    try {
+      if (!endpoint.value) {
+        throw new Error('endpoint is empty')
+      }
+      if (!username.value) {
+        throw new Error('username is empty')
+      }
+      if (!password.value) {
+        throw new Error('password is empty')
+      }
+
+      const token_ = await getToken(endpoint.value, username.value, password.value)
+      console.log(`Login success, token: ${token_}`)
+      token.value = token_
+    } catch (e) {
+      message.error(`${e}`)
+    }
   }
 
   async function refreshClients() {
-    if (!token.value) {
+    try {
+      if (!token.value) {
+        await login()
+      }
+
+      const clients_ = await getClients(endpoint.value, token.value)
+      console.log(`Refresh clients success, clients count: ${JSON.stringify(clients_.length)}`)
+      clients.value = clients_
+      lastUpdated.value = Date.now()
+      console.log(`Refresh clients Last Update: ${lastUpdated.value}`)
+    } catch (e) {
+      message.error(`${e}`)
       await login()
     }
-
-    const clients_ = await getClients(endpoint.value, token.value)
-    console.log(`Refresh clients success, clients count: ${JSON.stringify(clients_.length)}`)
-    clients.value = clients_
-    lastUpdated.value = Date.now()
-    console.log(`Refresh clients Last Update: ${lastUpdated.value}`)
   }
 
   async function updateClientsIntervalFn() {
