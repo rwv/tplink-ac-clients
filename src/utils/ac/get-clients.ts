@@ -12,6 +12,7 @@ export interface Client {
     rssi: string;
     ssid: string;
     vlan: string;
+    name?: string;
 }
 
 export async function getClients(endpoint: string, token: string) {
