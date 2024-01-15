@@ -1,46 +1,44 @@
-# where-web
+# TP-Link AC 客户端列表
 
-This template should help get you started developing with Vue 3 in Vite.
+对 TP-Link AC 路由器的客户端列表的再包装，变得更加好看。同时识别出设备 Mac 对应的厂商。
 
-## Recommended IDE Setup
+[tplink-ac-clients.rwv.dev](https://tplink-ac-clients.rwv.dev)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 截图
 
-## Type Support for `.vue` Imports in TS
+![截图](https://raw.githubusercontent.com/rwv/tplink-ac-clients/main/screenshot.png)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## 使用方法
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+需要有后台服务器反代 TP-Link AC 路由器的管理页面并正确设置 CORS，以 Caddy 为例：
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+```
+ac.example.com {
+    encode zstd gzip
 
-## Customize configuration
+    @options method OPTIONS
+    handle @options {
+        header Access-Control-Allow-Origin *
+        header Access-Control-Allow-Methods *
+        header Access-Control-Allow-Headers *
+        header Access-Control-Allow-Credentials true
+        respond "" 204
+    }
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+    reverse_proxy * {
+        to http://192.168.1.100
+        header_down Access-Control-Allow-Origin *
+        header_down Access-Control-Allow-Methods *
+        header_down Access-Control-Allow-Headers *
+        header_down Access-Control-Allow-Credentials true
+    }
 
-## Project Setup
-
-```sh
-pnpm install
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+}
 ```
 
-### Compile and Hot-Reload for Development
+然后在设置界面填入对应的地址、账号、密码即可。全前端所以无需担心账号密码泄露。
 
-```sh
-pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+不过用 Caddy 的话就涉及到 HTTPS 证书和域名的问题，目前我是使用 dns 的方式给内网 Caddy 服务器颁发证书。当然也可以使用全 HTTP 的方式，但我懒得写了。
