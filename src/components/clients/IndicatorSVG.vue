@@ -31,7 +31,7 @@ const percentageClamped = computed(() => Math.min(Math.max(props.percentage, 0),
 const dashoffset = computed(() => dasharray * (1 - percentageClamped.value / 100))
 
 const animationDurationStyle = computed(() => ({
-  transition: `stroke-dashoffset 100ms linear 0s`,
+  transition: `stroke-dashoffset 200ms linear 0s`,
   'stroke-dashoffset': dashoffset.value
 }))
 </script>
