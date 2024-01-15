@@ -1,23 +1,13 @@
 <template>
   <n-collapse>
-    <n-collapse-item
-      :title="client.name ?? client.mac"
-      :name="client.mac"
-      v-for="client in whereStore.clientsFiltered"
-      :key="client.mac"
-    >
-      <template #header-extra>
-        {{ client.ap_name }}
-      </template>
-      <ClientInfo :client="client" />
-    </n-collapse-item>
+    <APClient v-for="client in whereStore.clientsFiltered" :key="client.mac" :client="client" />
   </n-collapse>
 </template>
 
 <script setup lang="ts">
-import { NCollapse, NCollapseItem } from 'naive-ui'
+import { NCollapse } from 'naive-ui'
 import { useWhereStore } from '@/stores/where'
-import ClientInfo from './ClientInfo.vue'
+import APClient from './APClient.vue'
 
 const whereStore = useWhereStore()
 </script>
