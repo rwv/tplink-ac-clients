@@ -13,7 +13,7 @@ export const useWhereStore = defineStore('where', () => {
   const token = useStorage('token', '') as Ref<string>
   const clients = useStorage('clients', []) as Ref<Client[]>
   const lastUpdated = useStorage('lastUpdate', 0) as Ref<number>
-  const updateInterval = useStorage('updateInterval', 5000) as Ref<number>
+  const updateInterval = useStorage('updateInterval', 10000) as Ref<number>
   const lastInterval = ref(Date.now())
   const now = useTimestamp()
   const timeToNextUpdate = computed(() => {
