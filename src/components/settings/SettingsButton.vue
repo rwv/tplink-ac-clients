@@ -17,7 +17,13 @@
           <n-input v-model:value="whereStore.password" type="password" />
         </n-form-item>
         <n-form-item label="更新间隔">
-          <n-input-number v-model:value="whereStore.updateInterval" />
+          <n-input-number
+            v-model:value="whereStore.updateInterval"
+            style="width: 100%"
+            :show-button="false"
+          >
+            <template #suffix> ms </template>
+          </n-input-number>
         </n-form-item>
         <n-form-item label="显示隐藏客户端">
           <n-switch v-model:value="whereStore.showHidden" />
@@ -28,7 +34,17 @@
 </template>
 
 <script setup lang="ts">
-import { NCard, NForm, NFormItem, NInput, NButton, NSwitch, NModal, NIcon, NInputNumber } from 'naive-ui'
+import {
+  NCard,
+  NForm,
+  NFormItem,
+  NInput,
+  NButton,
+  NSwitch,
+  NModal,
+  NIcon,
+  NInputNumber
+} from 'naive-ui'
 import { useWhereStore } from '@/stores/where'
 import { ref } from 'vue'
 import { Settings16Regular as Icon } from '@vicons/fluent'
