@@ -27,10 +27,11 @@ const props = defineProps<{
 
 const r = 40
 const dasharray = 2 * Math.PI * r
-const dashoffset = computed(() => dasharray * (1 - props.percentage / 100))
+const percentageClamped = computed(() => Math.min(Math.max(props.percentage, 0), 100))
+const dashoffset = computed(() => dasharray * (1 - percentageClamped.value / 100))
 
 const animationDurationStyle = computed(() => ({
-  transition: `stroke-dashoffset 200ms linear 0s`,
+  transition: `stroke-dashoffset 100ms linear 0s`,
   'stroke-dashoffset': dashoffset.value
 }))
 </script>
