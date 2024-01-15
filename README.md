@@ -43,4 +43,4 @@ ac.example.com {
 
 不过用 Caddy 的话就涉及到 HTTPS 证书和域名的问题，目前我是使用 dns 的方式给内网 Caddy 服务器颁发证书。当然也可以使用全 HTTP 的方式，但我懒得写了。
 
-还有一个办法是反代 https://tplink-ac-clients.rwv.dev 并将 AC 控制器反代到 /api 下，也可以规避掉 CORS 的问题。
+还有一个办法是反代 https://tplink-ac-clients.rwv.dev 并将 AC 控制器反代到 `/api` 下，也可以规避掉 CORS 的问题。
