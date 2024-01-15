@@ -19,8 +19,6 @@ onMounted(async () => {
     <ClientHeader />
     <n-divider />
     <APClients />
-    <n-divider />
-    <SettingsCollapse />
   </main>
 </template>
 
