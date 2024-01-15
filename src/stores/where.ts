@@ -23,6 +23,10 @@ export const useWhereStore = defineStore('where', () => {
     return Math.round((100 * timeToNextUpdate.value) / updateInterval.value)
   })
   const showHidden = useStorage('showHidden', false) as Ref<boolean>
+  const loginInfoComplete = computed(() => {
+    return endpoint.value && username.value && password.value
+  })
+
 
   const clientsFiltered = computed(() => {
     return clients.value.filter((client) => {
@@ -34,14 +38,8 @@ export const useWhereStore = defineStore('where', () => {
 
   async function login() {
     try {
-      if (!endpoint.value) {
-        throw new Error('endpoint is empty')
-      }
-      if (!username.value) {
-        throw new Error('username is empty')
-      }
-      if (!password.value) {
-        throw new Error('password is empty')
+      if (!loginInfoComplete.value) {
+        return
       }
 
       const token_ = await getToken(endpoint.value, username.value, password.value)
@@ -54,6 +52,10 @@ export const useWhereStore = defineStore('where', () => {
 
   async function refreshClients() {
     try {
+      if (!loginInfoComplete.value) {
+        return
+      }
+
       if (!token.value) {
         await login()
       }
@@ -90,6 +92,7 @@ export const useWhereStore = defineStore('where', () => {
     timeToNextUpdate,
     timeToNextUpdatePercent,
     showHidden,
-    clientsFiltered
+    clientsFiltered,
+    loginInfoComplete
   }
 })

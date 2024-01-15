@@ -28,6 +28,9 @@
         <n-form-item label="显示隐藏客户端">
           <n-switch v-model:value="whereStore.showHidden" />
         </n-form-item>
+        <n-form-item label="最近更新时间">
+          <n-time :time="whereStore.lastUpdated" />
+        </n-form-item>
       </n-form>
     </n-card>
   </n-modal>
@@ -43,13 +46,20 @@ import {
   NSwitch,
   NModal,
   NIcon,
-  NInputNumber
+  NInputNumber,
+  NTime
 } from 'naive-ui'
 import { useWhereStore } from '@/stores/where'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { Settings16Regular as Icon } from '@vicons/fluent'
 
 const showModal = ref(false)
 
 const whereStore = useWhereStore()
+
+onMounted(() => {
+  if (!whereStore.loginInfoComplete) {
+    showModal.value = true
+  }
+})
 </script>
