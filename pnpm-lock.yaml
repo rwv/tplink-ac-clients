@@ -21,8 +21,8 @@ dependencies:
     specifier: ^3.3.11
     version: 3.4.10(typescript@5.3.3)
   vue-router:
-    specifier: ^4.2.5
-    version: 4.2.5(vue@3.4.10)
+    specifier: ^4.3.2
+    version: 4.3.2(vue@3.4.10)
 
 devDependencies:
   '@rushstack/eslint-patch':
@@ -4480,8 +4480,8 @@ packages:
       - supports-color
     dev: true
 
-  /vue-router@4.2.5(vue@3.4.10):
-    resolution: {integrity: sha512-DIUpKcyg4+PTQKfFPX88UWhlagBEBEfJ5A8XDXRJLUnZOvcpMF8o/dnL90vpVkGaPbjvXazV/rC1qBKrZlFugw==}
+  /vue-router@4.3.2(vue@3.4.10):
+    resolution: {integrity: sha512-hKQJ1vDAZ5LVkKEnHhmm1f9pMiWIBNGF5AwU67PdH7TyXCj/a4hTccuUuYCAMgJK6rO/NVYtQIEN3yL8CECa7Q==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
