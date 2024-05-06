@@ -31,7 +31,7 @@
     "@tsconfig/node18": "^18.2.4",
     "@types/node": "^20.12.9",
     "@vicons/fluent": "^0.12.0",
-    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/tsconfig": "^0.5.0",
