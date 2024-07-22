@@ -15,8 +15,8 @@ importers:
         specifier: ^2.0.10
         version: 2.0.10
       naive-ui:
-        specifier: ^2.38.2
-        version: 2.38.2(vue@3.4.33(typescript@5.5.3))
+        specifier: ^2.39.0
+        version: 2.39.0(vue@3.4.33(typescript@5.5.3))
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.5.3)(vue@3.4.33(typescript@5.5.3))
@@ -1949,8 +1949,8 @@ packages:
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
 
-  naive-ui@2.38.2:
-    resolution: {integrity: sha512-WhZ+6DW61aYSmFyfH7evcSGFmd2xR68Yq1mNRrVdJwBhZsnNdAUsMN9IeNCVEPMCND/jzYZghkStoNoR5Xa09g==}
+  naive-ui@2.39.0:
+    resolution: {integrity: sha512-5oUJzRG+rtLSH8eRU+fJvVYiQids2BxF9jp+fwGoAqHOptEINrBlgBu9uy+95RHE5FLJ7Q/z41o+qkoGnUrKxQ==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -4613,7 +4613,7 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
-  naive-ui@2.38.2(vue@3.4.33(typescript@5.5.3)):
+  naive-ui@2.39.0(vue@3.4.33(typescript@5.5.3)):
     dependencies:
       '@css-render/plugin-bem': 0.15.12(css-render@0.15.12)
       '@css-render/vue3-ssr': 0.15.12(vue@3.4.33(typescript@5.5.3))
