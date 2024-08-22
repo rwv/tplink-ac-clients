@@ -27,14 +27,11 @@ export const useWhereStore = defineStore('where', () => {
     return endpoint.value && username.value && password.value
   })
 
-
   const clientsFiltered = computed(() => {
     return clients.value.filter((client) => {
       return showHidden.value || !client?.name?.startsWith('.')
     })
   })
-
-  const message = useMessage()
 
   async function login() {
     try {
@@ -46,6 +43,7 @@ export const useWhereStore = defineStore('where', () => {
       console.log(`Login success, token: ${token_}`)
       token.value = token_
     } catch (e) {
+      const message = useMessage()
       message.error(`${e}`)
     }
   }
@@ -66,6 +64,7 @@ export const useWhereStore = defineStore('where', () => {
       lastUpdated.value = Date.now()
       console.log(`Refresh clients Last Update: ${lastUpdated.value}`)
     } catch (e) {
+      const message = useMessage()
       message.error(`${e}`)
       await login()
     }
