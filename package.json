@@ -43,6 +43,6 @@
     "typescript": "~5.8.2",
     "vite": "^5.4.12",
     "vite-plugin-pwa": "^0.20.5",
-    "vue-tsc": "^2.2.4"
+    "vue-tsc": "^2.2.8"
   }
 }
