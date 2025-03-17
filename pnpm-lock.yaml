@@ -40,8 +40,8 @@ importers:
         specifier: ^0.13.0
         version: 0.13.0
       '@vitejs/plugin-vue':
-        specifier: ^5.2.1
-        version: 5.2.1(vite@5.4.12(@types/node@22.13.10)(terser@5.39.0))(vue@3.5.13(typescript@5.8.2))
+        specifier: ^5.2.2
+        version: 5.2.2(vite@5.4.12(@types/node@22.13.10)(terser@5.39.0))(vue@3.5.13(typescript@5.8.2))
       '@vue/eslint-config-prettier':
         specifier: ^10.2.0
         version: 10.2.0(eslint@8.57.1)(prettier@3.5.3)
@@ -1072,8 +1072,8 @@ packages:
   '@vicons/fluent@0.13.0':
     resolution: {integrity: sha512-bYGZsOE3qzvm3Cm43e7tybgGlr5ZUpYqtRZq0g0Tfupe8jIzLolpvQLNUt1zS8Mgt6goTbUk5YH7Fkv16jkykg==}
 
-  '@vitejs/plugin-vue@5.2.1':
-    resolution: {integrity: sha512-cxh314tzaWwOLqVes2gnnCtvBDcM1UMdn+iFR+UjAn411dPT3tOmqrJjbMd7koZpMAmBM/GqeV4n9ge7JSiJJQ==}
+  '@vitejs/plugin-vue@5.2.2':
+    resolution: {integrity: sha512-IY0aPonWZI2huxrWjoSBUQX14GThitmr1sc2OUJymcgnY5RlUI7HoXGAnFEoVNRsck/kS6inGvxCN6CoHu86yQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
@@ -3778,7 +3778,7 @@ snapshots:
 
   '@vicons/fluent@0.13.0': {}
 
-  '@vitejs/plugin-vue@5.2.1(vite@5.4.12(@types/node@22.13.10)(terser@5.39.0))(vue@3.5.13(typescript@5.8.2))':
+  '@vitejs/plugin-vue@5.2.2(vite@5.4.12(@types/node@22.13.10)(terser@5.39.0))(vue@3.5.13(typescript@5.8.2))':
     dependencies:
       vite: 5.4.12(@types/node@22.13.10)(terser@5.39.0)
       vue: 3.5.13(typescript@5.8.2)
