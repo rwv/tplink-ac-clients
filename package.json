@@ -28,7 +28,7 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.10.5",
+    "@rushstack/eslint-patch": "^1.11.0",
     "@tsconfig/node18": "^18.2.4",
     "@types/node": "^22.13.10",
     "@vicons/fluent": "^0.13.0",
