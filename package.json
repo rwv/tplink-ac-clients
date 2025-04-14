@@ -20,7 +20,7 @@
     "download": "run-p download:*"
   },
   "dependencies": {
-    "@vueuse/core": "^13.0.0",
+    "@vueuse/core": "^13.1.0",
     "csvtojson": "^2.0.10",
     "naive-ui": "^2.41.0",
     "pinia": "^3.0.2",
