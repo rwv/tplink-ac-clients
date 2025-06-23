@@ -15,8 +15,8 @@ importers:
         specifier: ^2.0.10
         version: 2.0.10
       naive-ui:
-        specifier: ^2.41.1
-        version: 2.41.1(vue@3.5.16(typescript@5.8.3))
+        specifier: ^2.42.0
+        version: 2.42.0(vue@3.5.16(typescript@5.8.3))
       pinia:
         specifier: ^3.0.3
         version: 3.0.3(typescript@5.8.3)(vue@3.5.16(typescript@5.8.3))
@@ -981,8 +981,8 @@ packages:
   '@types/lodash-es@4.17.12':
     resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
 
-  '@types/lodash@4.17.17':
-    resolution: {integrity: sha512-RRVJ+J3J+WmyOTqnz3PiBLA501eKwXl2noseKOrNo/6+XEHjTAxO4xHvxQB6QuNm+s4WRbn6rSiap8+EA+ykFQ==}
+  '@types/lodash@4.17.18':
+    resolution: {integrity: sha512-KJ65INaxqxmU6EoCiJmRPZC9H9RVWCRd349tXM2M3O5NA7cY6YL7c0bHAHQ93NOfTObEQ004kd2QVHs/r0+m4g==}
 
   '@types/node@24.0.2':
     resolution: {integrity: sha512-Kv1shWMfCUnzbQTosAHrF2p8AzccoLODqJ0XqGPRA/mGVZR86KCk8I+fyh6B5+kcLtAKS9BquXUxVO79jU9UGg==}
@@ -2032,8 +2032,8 @@ packages:
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
 
-  naive-ui@2.41.1:
-    resolution: {integrity: sha512-TRv+GSCHnlbpiTJoz1xS1/l6Vn9/refjzJ6vFfXLuvBkSLB7ow6ERuLf2AQOqUrFSdM542EBJjoK1iM1S6X2lA==}
+  naive-ui@2.42.0:
+    resolution: {integrity: sha512-c7cXR2YgOjgtBadXHwiWL4Y0tpGLAI5W5QzzHksOi22iuHXoSGMAzdkVTGVPE/PM0MSGQ/JtUIzCx2Y0hU0vTQ==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -3663,9 +3663,9 @@ snapshots:
 
   '@types/lodash-es@4.17.12':
     dependencies:
-      '@types/lodash': 4.17.17
+      '@types/lodash': 4.17.18
 
-  '@types/lodash@4.17.17': {}
+  '@types/lodash@4.17.18': {}
 
   '@types/node@24.0.2':
     dependencies:
@@ -4841,12 +4841,12 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
-  naive-ui@2.41.1(vue@3.5.16(typescript@5.8.3)):
+  naive-ui@2.42.0(vue@3.5.16(typescript@5.8.3)):
     dependencies:
       '@css-render/plugin-bem': 0.15.14(css-render@0.15.14)
       '@css-render/vue3-ssr': 0.15.14(vue@3.5.16(typescript@5.8.3))
       '@types/katex': 0.16.7
-      '@types/lodash': 4.17.17
+      '@types/lodash': 4.17.18
       '@types/lodash-es': 4.17.12
       async-validator: 4.2.5
       css-render: 0.15.14
