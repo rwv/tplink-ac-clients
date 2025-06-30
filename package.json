@@ -22,7 +22,7 @@
   "dependencies": {
     "@vueuse/core": "^13.4.0",
     "csvtojson": "^2.0.10",
-    "naive-ui": "^2.41.1",
+    "naive-ui": "^2.42.0",
     "pinia": "^3.0.3",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
