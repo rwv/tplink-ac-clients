@@ -24,7 +24,7 @@
     "csvtojson": "^2.0.10",
     "naive-ui": "^2.42.0",
     "pinia": "^3.0.3",
-    "vue": "^3.5.18",
+    "vue": "^3.5.20",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
