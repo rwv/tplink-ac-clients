@@ -15,8 +15,8 @@ importers:
         specifier: ^2.0.14
         version: 2.0.14
       naive-ui:
-        specifier: ^2.42.0
-        version: 2.42.0(vue@3.5.24(typescript@5.9.3))
+        specifier: ^2.43.2
+        version: 2.43.2(vue@3.5.24(typescript@5.9.3))
       pinia:
         specifier: ^3.0.4
         version: 3.0.4(typescript@5.9.3)(vue@3.5.24(typescript@5.9.3))
@@ -995,8 +995,8 @@ packages:
   '@types/lodash-es@4.17.12':
     resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
 
-  '@types/lodash@4.17.19':
-    resolution: {integrity: sha512-NYqRyg/hIQrYPT9lbOeYc3kIRabJDn/k4qQHIXUpx88CBDww2fD15Sg5kbXlW86zm2XEW4g0QxkTI3/Kfkc7xQ==}
+  '@types/lodash@4.17.21':
+    resolution: {integrity: sha512-FOvQ0YPD5NOfPgMzJihoT+Za5pdkDJWcbpuj1DjaKZIr/gxodQjY/uWEFlTNqW2ugXHUiL8lRQgw63dzKHZdeQ==}
 
   '@types/node@24.10.1':
     resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
@@ -1374,8 +1374,8 @@ packages:
   csstype@3.0.11:
     resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
 
-  csstype@3.1.3:
-    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+  csstype@3.2.3:
+    resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
   csvtojson@2.0.14:
     resolution: {integrity: sha512-F7NNvhhDyob7OsuEGRsH0FM1aqLs/WYITyza3l+hTEEmOK9sGPBlYQZwlVG0ezCojXYpE17lhS5qL6BCOZSPyA==}
@@ -1399,8 +1399,8 @@ packages:
     peerDependencies:
       date-fns: ^3.0.0 || ^4.0.0
 
-  date-fns@3.6.0:
-    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
@@ -2029,8 +2029,8 @@ packages:
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
 
-  naive-ui@2.42.0:
-    resolution: {integrity: sha512-c7cXR2YgOjgtBadXHwiWL4Y0tpGLAI5W5QzzHksOi22iuHXoSGMAzdkVTGVPE/PM0MSGQ/JtUIzCx2Y0hU0vTQ==}
+  naive-ui@2.43.2:
+    resolution: {integrity: sha512-YlLMnGrwGTOc+zMj90sG3ubaH5/7czsgLgGcjTLA981IUaz8r6t4WIujNt8r9PNr+dqv6XNEr0vxkARgPPjfBQ==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -2616,8 +2616,8 @@ packages:
       typescript:
         optional: true
 
-  vueuc@0.4.64:
-    resolution: {integrity: sha512-wlJQj7fIwKK2pOEoOq4Aro8JdPOGpX8aWQhV8YkTW9OgWD2uj2O8ANzvSsIGjx7LTOc7QbS7sXdxHi6XvRnHPA==}
+  vueuc@0.4.65:
+    resolution: {integrity: sha512-lXuMl+8gsBmruudfxnMF9HW4be8rFziylXFu1VHVNbLVhRTXXV4njvpRuJapD/8q+oFEMSfQMH16E/85VoWRyQ==}
     peerDependencies:
       vue: ^3.0.11
 
@@ -3677,9 +3677,9 @@ snapshots:
 
   '@types/lodash-es@4.17.12':
     dependencies:
-      '@types/lodash': 4.17.19
+      '@types/lodash': 4.17.21
 
-  '@types/lodash@4.17.19': {}
+  '@types/lodash@4.17.21': {}
 
   '@types/node@24.10.1':
     dependencies:
@@ -3898,7 +3898,7 @@ snapshots:
       '@vue/reactivity': 3.5.24
       '@vue/runtime-core': 3.5.24
       '@vue/shared': 3.5.24
-      csstype: 3.1.3
+      csstype: 3.2.3
 
   '@vue/server-renderer@3.5.24(vue@3.5.24(typescript@5.9.3))':
     dependencies:
@@ -4119,7 +4119,7 @@ snapshots:
 
   csstype@3.0.11: {}
 
-  csstype@3.1.3: {}
+  csstype@3.2.3: {}
 
   csvtojson@2.0.14:
     dependencies:
@@ -4143,11 +4143,11 @@ snapshots:
       es-errors: 1.3.0
       is-data-view: 1.0.2
 
-  date-fns-tz@3.2.0(date-fns@3.6.0):
+  date-fns-tz@3.2.0(date-fns@4.1.0):
     dependencies:
-      date-fns: 3.6.0
+      date-fns: 4.1.0
 
-  date-fns@3.6.0: {}
+  date-fns@4.1.0: {}
 
   debug@4.3.7:
     dependencies:
@@ -4841,18 +4841,18 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
-  naive-ui@2.42.0(vue@3.5.24(typescript@5.9.3)):
+  naive-ui@2.43.2(vue@3.5.24(typescript@5.9.3)):
     dependencies:
       '@css-render/plugin-bem': 0.15.14(css-render@0.15.14)
       '@css-render/vue3-ssr': 0.15.14(vue@3.5.24(typescript@5.9.3))
       '@types/katex': 0.16.7
-      '@types/lodash': 4.17.19
+      '@types/lodash': 4.17.21
       '@types/lodash-es': 4.17.12
       async-validator: 4.2.5
       css-render: 0.15.14
-      csstype: 3.1.3
-      date-fns: 3.6.0
-      date-fns-tz: 3.2.0(date-fns@3.6.0)
+      csstype: 3.2.3
+      date-fns: 4.1.0
+      date-fns-tz: 3.2.0(date-fns@4.1.0)
       evtd: 0.2.4
       highlight.js: 11.11.1
       lodash: 4.17.21
@@ -4862,7 +4862,7 @@ snapshots:
       vdirs: 0.1.8(vue@3.5.24(typescript@5.9.3))
       vooks: 0.2.12(vue@3.5.24(typescript@5.9.3))
       vue: 3.5.24(typescript@5.9.3)
-      vueuc: 0.4.64(vue@3.5.24(typescript@5.9.3))
+      vueuc: 0.4.65(vue@3.5.24(typescript@5.9.3))
 
   nanoid@3.3.11: {}
 
@@ -5480,7 +5480,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  vueuc@0.4.64(vue@3.5.24(typescript@5.9.3)):
+  vueuc@0.4.65(vue@3.5.24(typescript@5.9.3)):
     dependencies:
       '@css-render/vue3-ssr': 0.15.14(vue@3.5.24(typescript@5.9.3))
       '@juggle/resize-observer': 3.4.0
