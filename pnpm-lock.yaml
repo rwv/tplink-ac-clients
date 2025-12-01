@@ -31,8 +31,8 @@ importers:
         specifier: ^1.15.0
         version: 1.15.0
       '@tsconfig/node18':
-        specifier: ^18.2.4
-        version: 18.2.4
+        specifier: ^18.2.6
+        version: 18.2.6
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
@@ -977,8 +977,8 @@ packages:
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
 
-  '@tsconfig/node18@18.2.4':
-    resolution: {integrity: sha512-5xxU8vVs9/FNcvm3gE07fPbn9tl6tqGGWA9tSlwsUEkBxtRnTsNmwrV8gasZ9F/EobaSv9+nu8AxUKccw77JpQ==}
+  '@tsconfig/node18@18.2.6':
+    resolution: {integrity: sha512-eAWQzAjPj18tKnDzmWstz4OyWewLUNBm9tdoN9LayzoboRktYx3Enk1ZXPmThj55L7c4VWYq/Bzq0A51znZfhw==}
 
   '@types/estree@0.0.39':
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
@@ -3665,7 +3665,7 @@ snapshots:
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.12
 
-  '@tsconfig/node18@18.2.4': {}
+  '@tsconfig/node18@18.2.6': {}
 
   '@types/estree@0.0.39': {}
 
